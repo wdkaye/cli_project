@@ -15,9 +15,3 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
 
 export class AppComponent  {
 }
-
-
-//export class AppComponent {
-//  title = 'cli_project';
-//  public forecasts: WeatherForecast[] = [];
-//}
