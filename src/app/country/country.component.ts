@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Country } from './country';
 import { environment } from '../../environments/environment.development';  // TODO confirm if .development stays or goes
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-country',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './country.component.html',
   styleUrl: './country.component.scss'
 })
