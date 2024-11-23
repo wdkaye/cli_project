@@ -19,4 +19,9 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class NavBarComponent {
 
+onLogout() {
+throw new Error('Method not implemented.');
+}
+  isLoggedIn: boolean = false;
+  
 }

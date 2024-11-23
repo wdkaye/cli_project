@@ -41,7 +41,10 @@ export class LoginComponent implements OnInit {
       {
         next: result => {
           this.loginResponse = result;
-          console.log(this.loginResponse)
+          console.log(this.loginResponse);
+          if (result.success) {
+            localStorage.setItem("comp584wk", result.token)
+          }
         },
         error: e => console.error(e)
       }
