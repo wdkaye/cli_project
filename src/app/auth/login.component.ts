@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, UntypedFormGroup, Validators, ReactiveFormsModule } from '@angular/forms'
 import { LoginRequest } from './login-request';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { AuthService } from './auth.service';
 import { LoginResponse } from './login-response';
@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
   loginRequest!: LoginRequest;
   loginResponse!: LoginResponse;
 
-  constructor(private authService: AuthService){
-    
+  constructor(private authService: AuthService, private router: Router){
+
   }
 
   ngOnInit(): void {
@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
           this.loginResponse = result;
           console.log(this.loginResponse);
           if (result.success) {
-            localStorage.setItem("comp584wk", result.token)
+            localStorage.setItem("comp584wk", result.token);
+            this.router.navigate(["/"]);
           }
         },
         error: e => console.error(e)
